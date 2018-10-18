@@ -1,8 +1,8 @@
 import {
     ADD_TODO,
-} from '../Constants'
+} from '../constants';
 
-const todos = (state = [], action) => {
+export default function todos(state = [], action) {
     switch (action.type) {
         case ADD_TODO:
             return [
@@ -18,4 +18,4 @@ const todos = (state = [], action) => {
     }
 }
 
-export default todos;
+
