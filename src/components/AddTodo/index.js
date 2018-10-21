@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { addTodo } from '../../actions';
 import AddTodo from './AddTodo';
 
-export function mapDispatchToProps (dispatch){
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         addTodo: (todo) => addTodo(todo)
     }, dispatch);
 }
 
-export function mapStateToProps (state){
+const mapStateToProps = (state) =>{
     return {
         todos: state.todos
     }

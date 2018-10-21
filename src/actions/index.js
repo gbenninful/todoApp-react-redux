@@ -1,5 +1,6 @@
 import {
-    ADD_TODO
+    ADD_TODO,
+    TOGGLE_TODO
 } from '../constants'
 
 export const addTodo = (text) => ({
@@ -9,10 +10,17 @@ export const addTodo = (text) => ({
 
 })
 
-export function selectUser(user) {
-    console.log('You selected: ', user.firstName);
+export const selectUser = (user) => {
     return {
         type: 'USER_SELECTED',
         payload: user
+    }
+}
+
+export const toggleTodo = (id) => {
+    console.log('You selected: ', id);
+    return {
+        type: TOGGLE_TODO,
+        id
     }
 }

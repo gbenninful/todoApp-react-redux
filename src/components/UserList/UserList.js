@@ -1,20 +1,23 @@
-import React, { PureComponent } from 'react';
-// import { selectUser } from '../../actions'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class UserList extends PureComponent {
+const UserList = (props) => {
+  const { users, selectUser } = props;
 
-  displayListItems() {
-    return this.props.users.map((user) => {
-      return (<li key={user.id} onClick={() => this.props.selectUser(user)}>{user.firstName} {user.lastName}</li>);
-    })
-  }
+  return (
+    <ul>
+      {users.map((user) => {
+        return <li key={user.id} onClick={() => selectUser(user)}>
+          {user.firstName} {user.lastName}
+        </li>
+      })}
+    </ul>
+  )
+}
 
-  render() {
-    //  console.log('UserList Value of Props: ', this.props);
-    return (
-      <div className="user-list">
-        <ul>{this.displayListItems()}</ul>
-      </div>
-    )
-  }
+export default UserList;
+
+UserList.propTypes = {
+  users: PropTypes.array,
+  selectUser: PropTypes.func
 }

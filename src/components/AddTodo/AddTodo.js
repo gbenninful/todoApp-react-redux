@@ -1,24 +1,19 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 let input;
 
-export default class AddTodo extends PureComponent {
-    static propTypes = {
-        addTodo: PropTypes.func,
-        users: PropTypes.array
-    }
+const AddTodo = ({addTodo}) => {
 
-    handleAddTodo (event) {
+    const handleAddTodo = (event) => {
         event.preventDefault(); 
-        this.props.addTodo(input.value);
+        addTodo(input.value);
         input.value = '';
     }
 
-    render() {
         return (
             <div>
-                <form onSubmit={(event)=>this.handleAddTodo(event)}>
+                <form onSubmit={(event) => handleAddTodo(event)}>
                     <label htmlFor="new-todo">Please enter your Todos: </label>
                     <input
                         type="text"
@@ -30,7 +25,12 @@ export default class AddTodo extends PureComponent {
                 </form>
             </div>
         )
-    }
+}
+
+export default AddTodo;
+
+AddTodo.propTypes = {
+    addTodo: PropTypes.func.isRequired
 }
 
 

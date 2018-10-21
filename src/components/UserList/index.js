@@ -2,14 +2,15 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import UserList from './UserList';
 import { selectUser } from '../../actions'
+import { getAllUsers } from '../../selectors/selectors';
 
-export function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return {
-        users: state.users
+        users: getAllUsers(state)
     }
 }
 
-export function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         selectUser      
     }, dispatch);

@@ -1,31 +1,16 @@
-import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
 
-export default class TodoList extends PureComponent {
+const TodoList = ({ todos, toggleTodo }) => (
+    <ul>
+        {todos.map((todo) => {
+            return <li key={todo.id}
+                onClick={() => toggleTodo(todo.id)}
+                className={todo.completed ? 'completed-todos' : ''}
+            >
+                {todo.text}
+            </li>
+        })}
+    </ul>
+)
 
-// static propTypes = {
-//     todos: PropTypes.array.isRequired
-// }
-
-displayTodos() {
-    return this.props.todos.map((todo) => {
-        return(<li key={todo.id}>{todo.text}</li>);
-    })
-}
-
-    render () {
-        return(
-            <ul>{this.displayTodos()}</ul>
-        )
-    }
-}
-
-// const TodoList = ({todos}) => (
-//     <ul>
-//         {todos.map((todo) => {
-//             return <li key={todo.id}>{todo.text}</li>
-//         })}
-//     </ul>
-// )
-
-// export default TodoList;
+export default TodoList;

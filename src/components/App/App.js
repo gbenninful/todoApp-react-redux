@@ -6,17 +6,21 @@ import TodoList from '../TodoList';
 import UserGreeting from '../UserGreeting';
 
 const App = () => {
-
   return (
     <div className="App">
-      <h2>Group Members</h2>
+      <h3>Group Members</h3>
       <UserList />
-      <UserGreeting />
       <br />
 
-      <h2>Todos</h2>
+      <UserGreeting greeting="hello" />
+      <br />
+
+      <h3>Todos</h3>
       <AddTodo />
       <TodoList />
+      <br />
+
+      <a href="#/">Show All Todos</a> || <a href="#/">Show Completed Todos</a> || <a href="#/">Show Incomplete Todos</a>
     </div>
   )
 };

@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
-import users from './users-reducers'
-import ActiveUserReducer from './active-user-reducer';
+import activeUserReducer from './active-user-reducer';
+import todosReducer from './todos-reducer';
+import usersReducer from './users-reducers';
 
 const rootReducer = combineReducers({
-    users,
-    todos,
-    activeUser: ActiveUserReducer
+    activeUser: activeUserReducer,
+    todos: todosReducer,
+    users: usersReducer,
 });
 
 export default rootReducer;
