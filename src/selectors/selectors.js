@@ -3,7 +3,9 @@ export const getActiveUser = (state) => {
 }
 
 export const getAllTodos = (state) => {
+    console.log('getAllTodos State: ', state);
     return state.todos;
+
 }
 
 export const getAllUsers = (state) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import AddTodo from '../AddTodo';
+// import FilterTodos from '../FilterTodos';
 import UserList from '../UserList';
 import TodoList from '../TodoList';
 import UserGreeting from '../UserGreeting';
@@ -15,13 +16,13 @@ const App = () => {
       <UserGreeting greeting="hello" />
       <br />
 
-      <h3>Todos</h3>
+      <h3>Todo List</h3>
       <AddTodo />
       <TodoList />
-      <br />
 
-      <a href="#/">Show All Todos</a> || <a href="#/">Show Completed Todos</a> || <a href="#/">Show Incomplete Todos</a>
+      {/* <FilterTodos /> */}
     </div>
   )
 };
+
 export default App;   
